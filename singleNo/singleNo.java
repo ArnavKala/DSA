@@ -16,13 +16,16 @@ public class singleNo {
 
 class Solution {
     public int singleNumber(int[] nums) {
-        int frequency=0;
+        int frequency=0;//to count how many time an element is repeated
+        //checking each elememt for repeatation
         for(int i=0;i<nums.length;i++){
             for(int j=0;j<nums.length;j++){
+                //if an element is repeated, increment the frequency
                 if(nums[j]==nums[i]){
                     frequency++;
                 }
             }
+            //if an element is only repeated once, return the value
             if(frequency!=2){
                 return nums[i];
             }
